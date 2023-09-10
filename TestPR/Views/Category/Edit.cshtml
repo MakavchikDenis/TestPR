@@ -1,0 +1,27 @@
+﻿@model TestPR.Models.Category
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    @using (Html.BeginForm())
+    {
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, "Наименование категории")  <br />
+            @Html.EditorFor(model => model.Name)
+        </div>
+        <br />
+
+        <br />
+        <input type="submit" value="Изменить категорию" class="btn btn-primary" />
+
+    }
+
+</div>
+<style>
+    .form-group {
+        margin-bottom: 10px;
+    }
+</style>

@@ -1,0 +1,53 @@
+﻿@model TestPR.Models.Product
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    @using (Html.BeginForm())
+    {
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, "Наименование продукта")  <br />
+            @Html.EditorFor(model => model.Name)
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.category.Name, "Категория")  <br />
+            @Html.DropDownList("categoryId", ViewBag.Categories as SelectList)
+        </div>
+
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, "Описание") <br />
+            @Html.EditorFor(model => model.Description)
+        </div>
+
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.Price, "Стоимость в рублях")  <br />
+            @Html.EditorFor(model => model.Price)
+        </div>
+
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.NoteGeneral, "Примечание общее")  <br />
+            @Html.EditorFor(model => model.NoteGeneral)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.NoteSpecial, "Примечание специальное")   <br />
+            @Html.EditorFor(model => model.NoteSpecial)
+        </div>
+
+        <br />
+        <input type="submit" value="Изменить продукт" class="btn btn-primary" />
+
+    }
+
+</div>
+<style>
+    .form-group {
+        margin-bottom: 10px;
+    }
+</style>

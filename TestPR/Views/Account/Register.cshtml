@@ -1,0 +1,35 @@
+﻿@model TestPR.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Регистрация";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h3>Регистрация </h3>
+    @using (Html.BeginForm())
+    {
+        <br />
+        
+        <div class="control-label">
+            @Html.LabelFor(model => model.Email, "Email")
+        </div>
+        @Html.EditorFor(model => model.Email)
+        <div class="err">
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+        
+        <br />
+
+        <div class="control-label">
+            @Html.LabelFor(model => model.Password, "Пароль")
+        </div>
+        @Html.EditorFor(model => model.Password)
+        <div class="err">
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+        <br />
+        
+        <br />
+        <input type="submit" value="Регистрация" class="btn btn-primary" />
+        <br />
+    }
+</div>
