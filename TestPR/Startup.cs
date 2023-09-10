@@ -67,6 +67,7 @@ namespace TestPR
             app.UseAuthentication();    // подключение аутентификации
             app.UseAuthorization();
 
+            ///
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
